@@ -1,0 +1,37 @@
+{
+  "name": "<package name>",
+  "version": "1.0.0",
+  "description": "<package desc>",
+  "main": "mod.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimmywarting/<package name>.git"
+  },
+  "keywords": [
+    "key",
+    "words"
+  ],
+  "author": "Jimmy Wärting <jimmy@warting.se> (https://jimmy.warting.se/opensource)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jimmywarting/<package name>/issues"
+  },
+  "engines": {
+    "node": ">=14.16"
+  },
+  "homepage": "https://github.com/jimmywarting/<package name>#readme",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/jimmywarting"
+    },
+    {
+      "type": "github",
+      "url": "https://paypal.me/jimmywarting"
+    }
+  ]
+}
