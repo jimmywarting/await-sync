@@ -1,7 +1,7 @@
 {
-  "name": "<package name>",
+  "name": "to-sync",
   "version": "1.0.0",
-  "description": "<package desc>",
+  "description": "Perform async work synchronously using web worker and SharedArrayBuffer",
   "main": "mod.js",
   "type": "module",
   "scripts": {
@@ -9,21 +9,32 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jimmywarting/<package name>.git"
+    "url": "git+https://github.com/jimmywarting/to-sync.git"
   },
+  "files": [
+    "./mod.js",
+    "./worker.js"
+  ],
   "keywords": [
-    "key",
-    "words"
+    "deasync",
+    "make-synchronous",
+    "sync",
+    "sync-exec",
+    "sync-rpc",
+    "sync-threads",
+    "synchronize",
+    "async",
+    "asyncronous"
   ],
   "author": "Jimmy Wärting <jimmy@warting.se> (https://jimmy.warting.se/opensource)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jimmywarting/<package name>/issues"
+    "url": "https://github.com/jimmywarting/to-sync/issues"
   },
   "engines": {
     "node": ">=14.16"
   },
-  "homepage": "https://github.com/jimmywarting/<package name>#readme",
+  "homepage": "https://github.com/jimmywarting/to-sync#readme",
   "funding": [
     {
       "type": "github",
@@ -33,5 +44,12 @@
       "type": "github",
       "url": "https://paypal.me/jimmywarting"
     }
-  ]
+  ],
+  "dependencies": {
+    "whatwg-worker": "^1.0.0"
+  },
+  "devDependencies": {
+    "make-synchronous": "^1.0.0",
+    "synckit": "^0.8.5"
+  }
 }
