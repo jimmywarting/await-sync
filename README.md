@@ -26,14 +26,18 @@ import { createWorker } from 'to-sync'
 const toSync = createWorker()
 
 const get = toSync(async url => {
-	const res = await fetch(url)
+  const res = await fetch(url)
   const ab = await res.arrayBuffer()
 
   // Must return Uint8Array.
-	return new Uint8Array(ab)
+  return new Uint8Array(ab)
 })
 
-fn('https://httpbin.org/get') // result as Uint8Array
+const uint8 = get('https://httpbin.org/get')
+const blob = new Blob([uint8])
+const ab = new ArrayBuffer(uint8)
+const text = new TextDecoder().decode(uint8)
+const json = JSON.stringify(text)
 ```
 
 ## API
