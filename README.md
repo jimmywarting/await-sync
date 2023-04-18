@@ -71,6 +71,10 @@ const get = toSync(async url => {
 const json = get('https://httpbin.org/get') // JSON
 ```
 
+For the most part i reccommend just sticking to JSON.parse and stringify and TextDecoder/Encoder.
+But if you need to transfer more structural data in other env. too then use something like cbox-x
+or other binary representations, here is a list of [alternatives](https://jimmywarting.github.io/3th-party-structured-clone-wpt/)
+
 ## Misc
 
 If two separate functions imports the same ESM then it will only be loaded once.
