@@ -42,7 +42,7 @@ const json = JSON.stringify(text)
 // way read blob sync, which you can't do with other desync libs
 // Thanks to PostMessage and StructuralClone
 const readBlobSync = toSync(async blob => blob.arrayBuffer().then(ab => new Uint8Array(ab)))
-const u8 = readBlobSync(new Blob(['hej'])) // Uint8Array([97,98,99])
+const u8 = readBlobSync(new Blob(['abc'])) // Uint8Array([97,98,99])
 
 ```
 
