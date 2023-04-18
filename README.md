@@ -1,7 +1,5 @@
 # to-sync <img src="https://user-images.githubusercontent.com/1148376/183421896-8fea5bef-6d32-4f49-ab6c-f2fe7e6ac4ab.svg" width="20px" height="20px" title="This package contains built-in JSDoc declarations (...works as equally well as d.ts)" alt="JSDoc icon, indicating that this package has built-in type declarations">
 
-# make-synchronous
-
 > Make an asynchronous function synchronous
 
 The only cross compatible solution that works fine in Deno, Bun.js, NodeJS and also Web Workers
