@@ -1,4 +1,4 @@
-# to-sync <img src="https://user-images.githubusercontent.com/1148376/183421896-8fea5bef-6d32-4f49-ab6c-f2fe7e6ac4ab.svg" width="20px" height="20px" title="This package contains built-in JSDoc declarations (...works as equally well as d.ts)" alt="JSDoc icon, indicating that this package has built-in type declarations">
+# await-sync <img src="https://user-images.githubusercontent.com/1148376/183421896-8fea5bef-6d32-4f49-ab6c-f2fe7e6ac4ab.svg" width="20px" height="20px" title="This package contains built-in JSDoc declarations (...works as equally well as d.ts)" alt="JSDoc icon, indicating that this package has built-in type declarations">
 
 > Make an asynchronous function synchronous
 
@@ -16,16 +16,16 @@ You can also even do `import('blob:uuid')`
 ## Install
 
 ```sh
-npm install to-sync
+npm install await-sync
 ```
 
 ## Usage
 ```js
-import { createWorker } from 'to-sync'
+import { createWorker } from 'await-sync'
 
-const toSync = createWorker()
+const awaitSync = createWorker()
 
-const get = toSync(async url => {
+const get = awaitSync(async url => {
   const res = await fetch(url)
   const ab = await res.arrayBuffer()
 
@@ -70,7 +70,7 @@ It supports most values, but not functions and symbols.
 ```js
 import { deserialize } from 'node:v8'
 
-const get = toSync(async url => {
+const get = awaitSync(async url => {
   const { serialize } = await import('node:v8')
 	const res = await fetch(url)
   const json = await res.json()
@@ -92,7 +92,7 @@ That's b/c they share the same worker thread. The web workers are never terminat
 so the first call may take a bit longer but the 2nd won't
 
 ```js
-const fn1 = toSync(async () => {
+const fn1 = awaitSync(async () => {
   globalThis.xyz ??= 0
   console.log(globalThis.xyz++)
 
@@ -100,7 +100,7 @@ const fn1 = toSync(async () => {
   return new Uint8Array()
 })
 
-const fn2 = toSync(async () => {
+const fn2 = awaitSync(async () => {
   globalThis.xyz ??= 0
   console.log(globalThis.xyz++)
 

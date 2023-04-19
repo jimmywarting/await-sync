@@ -16,7 +16,7 @@ function createWorker (signal) {
   // Terminate the worker thread if a signal is aborted
   signal?.addEventListener('abort', () => worker.terminate())
 
-  return function toSync (fn, formatter) {
+  return function awaitSync (fn, formatter) {
     const source = 'export default ' + fn.toString()
     const mc = new MessageChannel()
     const localPort = mc.port1

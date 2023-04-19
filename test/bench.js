@@ -7,7 +7,7 @@ import { createSyncFn } from 'synckit'
 
 // the worker path must be absolute
 const workerPath = new URL('./synkit-worker.js', import.meta.url).toString().slice(7)
-const syncIt = createSyncFn(workerPath, {})
+const awaitSync = createSyncFn(workerPath, {})
 
 const sin = makeSynchronous(async path => {
   const fs = await import('fs/promises')
@@ -22,7 +22,7 @@ const jim = createWorker()(async path => {
 })
 
 const control = Buffer.from(readFileSync(new URL(path))).toString()
-console.assert(Buffer.from(syncIt(path)).toString() === control, 'should return the same data')
+console.assert(Buffer.from(awaitSync(path)).toString() === control, 'should return the same data')
 console.assert(Buffer.from(jim(path)).toString() === control, 'should return the same data')
 console.assert(Buffer.from(sin(path)).toString() === control, 'should return the same data')
 
@@ -35,7 +35,7 @@ console.timeEnd('fs.readFileSync')
 
 i = 100
 console.time('synkit')
-while (i--) syncIt(path)
+while (i--) awaitSync(path)
 console.timeEnd('synkit')
 
 i = 100

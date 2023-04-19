@@ -1,5 +1,5 @@
 {
-  "name": "to-sync",
+  "name": "await-sync",
   "version": "1.0.0",
   "description": "Perform async work synchronously using web worker and SharedArrayBuffer",
   "main": "mod.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jimmywarting/to-sync.git"
+    "url": "git+https://github.com/jimmywarting/await-sync.git"
   },
   "files": [
     "./mod.js",
@@ -29,12 +29,12 @@
   "author": "Jimmy Wärting <jimmy@warting.se> (https://jimmy.warting.se/opensource)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jimmywarting/to-sync/issues"
+    "url": "https://github.com/jimmywarting/await-sync/issues"
   },
   "engines": {
     "node": ">=14.16"
   },
-  "homepage": "https://github.com/jimmywarting/to-sync#readme",
+  "homepage": "https://github.com/jimmywarting/await-sync#readme",
   "funding": [
     {
       "type": "github",
@@ -46,7 +46,7 @@
     }
   ],
   "dependencies": {
-    "whatwg-worker": "^1.0.0"
+    "whatwg-worker": "^1.0.1"
   },
   "devDependencies": {
     "make-synchronous": "^1.0.0",
