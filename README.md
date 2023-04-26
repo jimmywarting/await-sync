@@ -35,9 +35,9 @@ const get = awaitSync(async url => {
 
 const uint8 = get('https://httpbin.org/get')
 const blob = new Blob([uint8])
-const ab = new ArrayBuffer(uint8)
+const arrayBuffer = uint8.buffer
 const text = new TextDecoder().decode(uint8)
-const json = JSON.stringify(text)
+const json = JSON.parse(text)
 
 // way read blob sync, which you can't do with other desync libs
 // Thanks to PostMessage and StructuralClone
