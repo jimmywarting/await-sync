@@ -1,6 +1,6 @@
 {
   "name": "await-sync",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Perform async work synchronously using web worker and SharedArrayBuffer",
   "main": "mod.js",
   "type": "module",
@@ -46,7 +46,7 @@
     }
   ],
   "dependencies": {
-    "whatwg-worker": "^1.0.1"
+    "whatwg-worker": "^1.0.2"
   },
   "devDependencies": {
     "make-synchronous": "^1.0.0",
