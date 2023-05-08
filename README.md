@@ -2,7 +2,7 @@
 
 > Make an asynchronous function synchronous
 
-The only cross compatible solution that works fine in Deno, Bun.js, NodeJS and also Web Workers
+The only cross compatible solution that works fine in Deno, NodeJS and also Web Workers
 
 The benefit of this package over other `desync` or `synckit`, `make-synchronous` and others
 libs is that this only uses web tech like `Worker` and `SharedArrayBuffer`
