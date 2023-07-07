@@ -1,6 +1,6 @@
 {
   "name": "await-sync",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Perform async work synchronously using web worker and SharedArrayBuffer",
   "main": "mod.js",
   "type": "module",
