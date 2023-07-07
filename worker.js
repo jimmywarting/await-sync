@@ -12,6 +12,11 @@ addEventListener('message', async evt => {
     let bytesLeft = buf.byteLength
     let offset = 0
 
+    if (bytesLeft === 0) {
+      int32[0] = -1
+      Atomics.notify(int32, 0)
+    }
+
     while (bytesLeft > 0) {
       int32[0] = bytesLeft
       const chunkSize = Math.min(bytesLeft, data.byteLength)

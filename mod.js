@@ -37,6 +37,10 @@ function createWorker (signal) {
       let bytesLeft = int32[0]
       const ok = int32[1]
 
+      if (bytesLeft === -1) {
+        return new Uint8Array(0)
+      }
+
       // Allocate a new Uint8Array to store the result
       const result = new Uint8Array(bytesLeft)
       let offset = 0

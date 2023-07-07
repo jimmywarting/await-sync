@@ -10,6 +10,12 @@ const fn = awaitSync(async function (pkg) {
   return textEncoder.encode(str)
 }, r => new TextDecoder().decode(r))
 
+const returnsEmptyData = awaitSync(async function () {
+  return new Uint8Array(0)
+})
+
+console.assert(returnsEmptyData().byteLength === 0, 'empty byteLength should be 0')
+
 const pkg = fn(new URL('../package.json', import.meta.url) + '')
 ctrl.abort()
 const json = JSON.parse(pkg)
