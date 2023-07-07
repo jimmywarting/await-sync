@@ -1,8 +1,7 @@
 /*! to-sync. MIT License. Jimmy Wärting <https://jimmy.warting.se/opensource> */
 
 // Use the native Worker if available, otherwise use the polyfill
-// const Work = globalThis.Worker || await import('whatwg-worker').then(m => m.default)
-const Work = await import('/Users/jimmywarting/git/web-worker/node-worker.js').then(m => m.default)
+const Work = globalThis.Worker || await import('whatwg-worker').then(m => m.default)
 
 function createWorker (signal) {
   // Create a shared buffer to communicate with the worker thread
