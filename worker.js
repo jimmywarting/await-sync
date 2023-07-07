@@ -8,9 +8,14 @@ addEventListener('message', async evt => {
   const int32 = new Int32Array(ab, 0, 2)
 
   /** @param {Uint8Array} buf */
-  const write2 = buf => {
+  const write = buf => {
     let bytesLeft = buf.byteLength
     let offset = 0
+
+    if (bytesLeft === 0) {
+      int32[0] = -1
+      Atomics.notify(int32, 0)
+    }
 
     while (bytesLeft > 0) {
       int32[0] = bytesLeft
@@ -24,8 +29,9 @@ addEventListener('message', async evt => {
     }
   }
 
-  const blob = new Blob([code], { type: 'text/javascript' })
-  const url = URL.createObjectURL(blob)
+  // const blob = new Blob([code], { type: 'text/javascript' })
+  // const url = URL.createObjectURL(blob)
+  const url = "data:text/javascript," + encodeURIComponent(code)
   const { default: fn } = await import(url)
 
   port.onmessage = async function onmessage (evt) {
@@ -47,6 +53,6 @@ addEventListener('message', async evt => {
       })
 
     int32[1] = ok
-    write2(u8)
+    write(u8)
   }
 })
