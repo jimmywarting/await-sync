@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "make-synchronous": "^1.0.0",
-    "synckit": "^0.8.5"
+    "synckit": "^0.8.5",
+    "tinylet": "^0.1.0"
   }
 }

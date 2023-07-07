@@ -1,7 +1,8 @@
 /*! to-sync. MIT License. Jimmy Wärting <https://jimmy.warting.se/opensource> */
 
 // Use the native Worker if available, otherwise use the polyfill
-const Work = globalThis.Worker || await import('whatwg-worker').then(m => m.default)
+// const Work = globalThis.Worker || await import('whatwg-worker').then(m => m.default)
+const Work = await import('/Users/jimmywarting/git/web-worker/node-worker.js').then(m => m.default)
 
 function createWorker (signal) {
   // Create a shared buffer to communicate with the worker thread
@@ -24,6 +25,7 @@ function createWorker (signal) {
     worker.postMessage({ port: remotePort, code: source, ab }, [remotePort])
 
     return function runSync (...args) {
+      Atomics.store(int32, 0, 0)
       // Send the arguments to the worker thread
       localPort.postMessage(args)
       // Wait for the worker thread to send the result back

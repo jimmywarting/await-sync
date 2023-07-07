@@ -13,4 +13,9 @@ const fn = awaitSync(async function (pkg) {
 const pkg = fn(new URL('../package.json', import.meta.url) + '')
 ctrl.abort()
 const json = JSON.parse(pkg)
-console.assert(json.name === 'await-sync', 'should return the same data')
+
+if (json.name === 'await-sync') {
+  console.log('test completed')
+} else {
+  throw new Error('test failed')
+}
